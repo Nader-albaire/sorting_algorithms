@@ -13,3 +13,25 @@ Requirements:
 
 This project not only focuses on the technical implementation of sorting algorithms but also aims to reinforce essential programming skills, collaboration in pair programming, and understanding algorithmic complexity. Students are encouraged to explore various sorting algorithms, evaluate their efficiency using Big O notation, and apply their knowledge to select the most suitable algorithm for different scenarios.
 
+
+
+
+# Project Description: 0x1B. C - Sorting Algorithms & Big O
+
+In this C programming project, pairs of students implement sorting algorithms, grasp Big O notation for time complexity, and understand the selection of algorithms. Key objectives include implementing four sorting algorithms, adhering to coding standards, and documenting code. Restricted use of the standard library enhances algorithmic understanding. The project encourages collaboration, reinforcing both technical and collaborative skills.
+
+:computer: Happy coding! :rocket:
+
+```plaintext
+  ┏━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┓
+  ┃  ♠ 2          ┃   ┃  ♥ 7          ┃   ┃  ♦ K          ┃
+  ┃     ┏━━━━┓    ┃   ┃     ┏━━━━┓    ┃   ┃     ┏━━━━┓    ┃
+  ┃     ┃ ♠  ┃    ┃   ┃     ┃ ♥  ┃    ┃   ┃     ┃ ♦  ┃    ┃
+  ┃     ┃    ┃    ┃   ┃     ┃    ┃    ┃   ┃     ┃    ┃    ┃
+  ┃     ┃ 2  ┃    ┃   ┃     ┃ 7  ┃    ┃   ┃     ┃ K  ┃    ┃
+  ┃     ┗━━━━┛    ┃   ┃     ┗━━━━┛    ┃   ┃     ┗━━━━┛    ┃
+  ┃         ♠ 2   ┃   ┃         ♥ 7   ┃   ┃         ♦  K  ┃
+  ┗━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━┛
+
+
+
