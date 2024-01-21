@@ -39,18 +39,7 @@ In this C programming project, pairs of students implement sorting algorithms, g
 
 
 
-N    N    A
-NN   N   A A
-N N  N  A   A
-N  N N  AAAAA
-N   NN  A   A
-                                   
+Authors 
 
-
- III     A
-  I     A A
-  I    A   A
-  I    AAAAA
- III   A   A
-
+NADER ALBAIRE &&  ISHTIAG ABBAKER
 
