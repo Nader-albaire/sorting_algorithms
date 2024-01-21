@@ -51,3 +51,12 @@ In this C programming project, pairs of students implement sorting algorithms, g
                     __/ |
                    |___/
 
+
+
+
+N     A     L     BBBBB    A     I RRRRR  EEEEE       I I I A A A A   BBBBB   U   U BBBBB   A A A A    K  K  EEEEE RRRRR
+NN    A A    L     B    B  A A    I R    R E           I   A     A   B    B  U   U B    B  A     A    K K   E     R    R
+N N  A   A   L     BBBBB  A   A   I RRRRR  EEEE        I   AAAAA A   BBBBB   U   U BBBBB  AAAAA AAAAA K     EEEE  RRRRR
+N  N AAAAA   L     B    B AAAAA   I R  R   E           I   A     A   B    B  U   U B    B  A     A    K K   E     R  R
+N   NA     A  LLLLL BBBBB A     A  I R   RR EEEEE     I I I A     A   BBBBB    UUU  BBBBB  A     A    K  K  EEEEE R   RR
+
