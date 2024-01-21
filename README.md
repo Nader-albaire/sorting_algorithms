@@ -35,28 +35,22 @@ In this C programming project, pairs of students implement sorting algorithms, g
 
 
 
- _____ _               _                _____           _
-|  __ (_)             | |              |  __ \         | |
-| |__) | |__   __ __ _| |_   _ ___    | |__) |__ _  __| | ___
-|  ___/| '_ \ / _` | | | | / __|   |  _  // _` |/ _` |/ _ \
-| |    | | | | (_| | | |_| \__ \   | | \ \ (_| | (_| |  __/
-|_|    |_| |_|\__,_|_|\__,_|___/   |_|  \_\__,_|\__,_|\___|
-                                     
-     ____  _     _     _____ _           _
-    |  _ \| |   (_)   |  __ (_)         | |
-    | |_) | |__  _ _  | |__) |__ _  __ _| |_
-    |  _ <| '_ \| | | |  ___/ '_ \|_  / | __|
-    | |_) | | | | | |_| | |   | | | |/ /| | |_
-    |____/|_| |_|_|\__, |_|   |_| |_/___|\__|
-                    __/ |
-                   |___/
 
 
 
 
-N     A     L     BBBBB    A     I RRRRR  EEEEE       I I I A A A A   BBBBB   U   U BBBBB   A A A A    K  K  EEEEE RRRRR
-NN    A A    L     B    B  A A    I R    R E           I   A     A   B    B  U   U B    B  A     A    K K   E     R    R
-N N  A   A   L     BBBBB  A   A   I RRRRR  EEEE        I   AAAAA A   BBBBB   U   U BBBBB  AAAAA AAAAA K     EEEE  RRRRR
-N  N AAAAA   L     B    B AAAAA   I R  R   E           I   A     A   B    B  U   U B    B  A     A    K K   E     R  R
-N   NA     A  LLLLL BBBBB A     A  I R   RR EEEEE     I I I A     A   BBBBB    UUU  BBBBB  A     A    K  K  EEEEE R   RR
+N    N    A
+NN   N   A A
+N N  N  A   A
+N  N N  AAAAA
+N   NN  A   A
+                                   
+
+
+ III     A
+  I     A A
+  I    A   A
+  I    AAAAA
+ III   A   A
+
 
