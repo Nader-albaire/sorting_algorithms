@@ -10,8 +10,8 @@
 
 /**
  * enum bool - Enumeration of Boolean values.
- * @false: Equals 0.
- * @true: Equals 1.
+ * @false: Equals 0
+ * @true: Equals 1
  */
 typedef enum bool
 {
