@@ -1,80 +1,91 @@
 #include "sort.h"
 
+void swap_ints(int *one, int *two);
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
+		char flow);
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
+void bitonic_sort(int *array, size_t size);
+
 /**
- * find_max - Find the maximum value in an array of integers.
- * @array: An array of integers.
- * @size: The size of the array.
- *
- * Return: The maximum integer in the array.
+ * swap_ints - Swap two integers in an array.
+ * @a: The first integer to swap.
+ * @b: The second integer to swap.
  */
-int find_max(int *array, int size)
+void swap_ints(int *one, int *two)
 {
-	int max_val, i;
+	int temp;
 
-	for (max_val = array[0], i = 1; i < size; i++)
-	{
-		if (array[i] > max_val)
-			max_val = array[i];
-	}
-
-	return (max_val);
+	temp = *one;
+	*one = *two;
+	*two = temp;
 }
 
 /**
- * counting_sort_radix - Perform counting sort on the significant digits
- *                       of an array of integers.
+ * bitonic_merge - Sort a bitonic sequence inside an array of integers.
  * @array: An array of integers.
  * @size: The size of the array.
- * @sig: The significant digit to sort on.
- * @buffer: A buffer to store the sorted array.
+ * @start: The starting index of the sequence in array to sort.
+ * @seq: The size of the sequence to sort.
+ * @flow: The direction to sort in.
  */
-void counting_sort_radix(int *array, size_t size, int sig, int *buffer)
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
+		char flow)
 {
-	int count[10] = {0}, i;
+	size_t x, jmp = seq / 2;
 
-	for (i = 0; i < size; i++)
-		count[(array[i] / sig) % 10]++;
-
-	for (i = 1; i < 10; i++)
-		count[i] += count[i - 1];
-
-	for (i = size - 1; (int)i >= 0; i--)
+	if (seq > 1)
 	{
-		buffer[count[(array[i] / sig) % 10] - 1] = array[i];
-		count[(array[i] / sig) % 10]--;
+		for (x = start; x < start + jmp; x++)
+		{
+			if ((flow == UP && array[x] > array[x + jmp]) ||
+			    (flow == DOWN && array[x] < array[x + jmp]))
+				swap_ints(array + x, array + x + jmp);
+		}
+		bitonic_merge(array, size, start, jmp, flow);
+		bitonic_merge(array, size, start + jmp, jmp, flow);
 	}
-
-	for (i = 0; i < size; i++)
-		array[i] = buffer[i];
 }
 
 /**
- * radix_sort - Sort an array of integers in ascending order
- *              using the LSD radix sort algorithm.
+ * bitonic_seq - Convert an array of integers into a bitonic sequence.
+ * @array: An array of integers.
+ * @size: The size of the array.
+ * @start: The starting index of a block of the building bitonic sequence.
+ * @seq: The size of a block of the building bitonic sequence.
+ * @flow: The direction to sort the bitonic sequence block in.
+ */
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow)
+{
+	size_t cut = seq / 2;
+	char *str = (flow == UP) ? "UP" : "DOWN";
+
+	if (seq > 1)
+	{
+		printf("Merging [%lu/%lu] (%s):\n", seq, size, str);
+		print_array(array + start, seq);
+
+		bitonic_seq(array, size, start, cut, UP);
+		bitonic_seq(array, size, start + cut, cut, DOWN);
+		bitonic_merge(array, size, start, seq, flow);
+
+		printf("Result [%lu/%lu] (%s):\n", seq, size, str);
+		print_array(array + start, seq);
+	}
+}
+
+/**
+ * bitonic_sort - Sort an array of integers in ascending
+ *                order using the bitonic sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
  *
- * Description: Implements the Least Significant Digit (LSD) radix sort algorithm.
- * Prints the array after each significant digit iteration.
+ * Description: Prints the array after each swap. Only works for
+ * size = 2^k where k >= 0 (ie. size equal to powers of 2).
  */
-void radix_sort(int *array, size_t size)
+void bitonic_sort(int *array, size_t size)
 {
-	int max_value, sig_digit, *temp_buffer;
-
 	if (array == NULL || size < 2)
 		return;
 
-	temp_buffer = malloc(sizeof(int) * size);
-	if (temp_buffer == NULL)
-		return;
-
-	max_value = find_max(array, size);
-
-	for (sig_digit = 1; max_value / sig_digit > 0; sig_digit *= 10)
-	{
-		counting_sort_radix(array, size, sig_digit, temp_buffer);
-		print_array(array, size);
-	}
-
-	free(temp_buffer);
+	bitonic_seq(array, size, 0, size, UP);
 }
