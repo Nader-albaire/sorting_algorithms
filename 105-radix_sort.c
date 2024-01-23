@@ -13,15 +13,15 @@ void radix_sort(int *array, size_t size);
  */
 int get_max(int *array, int size)
 {
-	int maxi, x;
+	int max, i;
 
-	for (maxi = array[0], x = 1; x < size; x++)
+	for (max = array[0], i = 1; i < size; i++)
 	{
-		if (array[x] > maxi)
-			maxi = array[x];
+		if (array[i] > max)
+			max = array[i];
 	}
 
-	return (maxi);
+	return (max);
 }
 
 /**
@@ -34,19 +34,19 @@ int get_max(int *array, int size)
  */
 void radix_counting_sort(int *array, size_t size, int sig, int *buff)
 {
-	int C[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	size_t i;
 
 	for (i = 0; i < size; i++)
-		C[(array[i] / sig) % 10] += 1;
+		count[(array[i] / sig) % 10] += 1;
 
 	for (i = 0; i < 10; i++)
-		C[i] += C[i - 1];
+		count[i] += count[i - 1];
 
 	for (i = size - 1; (int)i >= 0; i--)
 	{
-		buff[C[(array[i] / sig) % 10] - 1] = array[i];
-		C[(array[i] / sig) % 10] -= 1;
+		buff[count[(array[i] / sig) % 10] - 1] = array[i];
+		count[(array[i] / sig) % 10] -= 1;
 	}
 
 	for (i = 0; i < size; i++)
@@ -81,3 +81,4 @@ void radix_sort(int *array, size_t size)
 	}
 
 	free(buff);
+}
