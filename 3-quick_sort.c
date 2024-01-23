@@ -26,7 +26,8 @@ void swap_ints(int *a, int *b)
  */
 int lomuto_partition(int *array, size_t size, int left, int right)
 {
-	int *pivot, above, below;
+	int *pivot;
+	int above, below;
 
 	pivot = array + right;
 	for (above = below = left; below < right; below++)
@@ -48,11 +49,15 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 		print_array(array, size);
 	}
 
+<<<<<<< HEAD
 }	return above;
+=======
+	return (above);
+>>>>>>> b59f28c0dab3b248d521eee99730da009e354f61
 }
 
 /**
- * lomuto_sort - Implement the quicksort algorithm through recursion.
+ * lomuto_sort_recursive - Implement the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @left: The starting index of the array partition to order.
@@ -60,15 +65,15 @@ int lomuto_partition(int *array, size_t size, int left, int right)
  *
  * Description: Uses the Lomuto partition scheme.
  */
-void lomuto_sort(int *array, size_t size, int left, int right)
+void lomuto_sort_recursive(int *array, size_t size, int left, int right)
 {
 int part;
 
 	if (right - left > 0)
 	{
 		part = lomuto_partition(array, size, left, right);
-		lomuto_sort(array, size, left, part - 1);
-		lomuto_sort(array, size, part + 1, right);
+		lomuto_sort_recursive(array, size, left, part - 1);
+		lomuto_sort_recursive(array, size, part + 1, right);
 	}
 }
 
@@ -86,6 +91,5 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	lomuto_sort(array, size, 0, size - 1);
+	lomuto_sort_recursive(array, size, 0, size - 1);
 }
-
