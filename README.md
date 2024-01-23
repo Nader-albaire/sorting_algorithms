@@ -1,4 +1,4 @@
-Project Description: 0x1B. C - Sorting Algorithms & Big O
+roject Description: 0x1B. C - Sorting Algorithms & Big O
 
 The "0x1B. C - Sorting algorithms & Big O" project challenges students to implement various sorting algorithms in the C programming language. The project is designed for pairs of students who are expected to pair program for the mandatory part. Key learning objectives include understanding and implementing at least four different sorting algorithms, grasping the concept of Big O notation to evaluate time complexity, selecting the most appropriate sorting algorithm for a given input, and comprehending the characteristics of stable sorting algorithms.
 
