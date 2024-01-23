@@ -8,9 +8,9 @@
  */
 void swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 {
-    if (node1->prev != NULL)
-    node1->prev->next = node2;
-    else
+if (node1->prev != NULL)
+node1->prev->next = node2;
+else
 *head = node2;
 
 if (node2->next != NULL)
